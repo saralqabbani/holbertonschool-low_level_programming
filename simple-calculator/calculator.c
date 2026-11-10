@@ -1,7 +1,8 @@
+
 #include <stdio.h>
 
 /**
- * main - Simple calculator skeleton program.
+ * main - Simple calculator menu.
  *
  * Return: Always 0.
  */
@@ -21,7 +22,7 @@ int main(void)
 
 		if (scanf("%d", &choice) != 1)
 		{
-			printf("Invalid input\n");
+			printf("Invalid choice\n");
 			return (1);
 		}
 
