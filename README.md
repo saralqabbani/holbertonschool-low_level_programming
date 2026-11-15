@@ -1,7 +1,3 @@
-# Low Level Programming
+# holbertonschool-low_level_programming
 
-This repository contains C programming exercises.
-
-## malloc_free
-
-Memory allocation and deallocation exercises using malloc and free.
+Low-level programming exercises in C.
