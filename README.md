@@ -1,7 +1,7 @@
-# Holberton School - Low Level Programming
+# Low Level Programming
 
-This repository contains C programming projects completed during the Holberton School curriculum.
+This repository contains C programming exercises.
 
-## Projects
+## malloc_free
 
-- pointers_arrays_strings: Exercises covering pointers, arrays, and strings.
+Memory allocation and deallocation exercises using malloc and free.
