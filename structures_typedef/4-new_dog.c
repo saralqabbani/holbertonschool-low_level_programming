@@ -1,6 +1,34 @@
 #include <stdlib.h>
-#include <string.h>
 #include "dog.h"
+
+/**
+ * copy_string - Creates a copy of a string
+ * @str: String to copy
+ *
+ * Return: Pointer to copied string, or NULL on failure
+ */
+char *copy_string(char *str)
+{
+	char *copy;
+	int i = 0;
+	int len = 0;
+
+	while (str[len])
+		len++;
+
+	copy = malloc(sizeof(char) * (len + 1));
+	if (copy == NULL)
+		return (NULL);
+
+	while (i < len)
+	{
+		copy[i] = str[i];
+		i++;
+	}
+	copy[i] = '\0';
+
+	return (copy);
+}
 
 /**
  * new_dog - Creates a new dog
@@ -8,7 +36,7 @@
  * @age: Age of the dog
  * @owner: Owner of the dog
  *
- * Return: Pointer to the new dog, or NULL on failure
+ * Return: Pointer to new dog, or NULL on failure
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -21,22 +49,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (dog == NULL)
 		return (NULL);
 
-	dog->name = malloc(strlen(name) + 1);
+	dog->name = copy_string(name);
 	if (dog->name == NULL)
 	{
 		free(dog);
 		return (NULL);
 	}
-	strcpy(dog->name, name);
 
-	dog->owner = malloc(strlen(owner) + 1);
+	dog->owner = copy_string(owner);
 	if (dog->owner == NULL)
 	{
 		free(dog->name);
 		free(dog);
 		return (NULL);
 	}
-	strcpy(dog->owner, owner);
 
 	dog->age = age;
 
